@@ -14,14 +14,11 @@ Here are some ideas to get you started:
 <a href="mailto:santoshmanaguli1515@gmail.com">
   <img align="left" width="26px" src="https://cdn-icons-png.flaticon.com/512/281/281769.png" />
 </a>
-<a href="https://dev.to/santoshmanaguli">
-  <img align="left" width="26px" src="https://raw.githubusercontent.com/santoshmanaguli/santoshmanaguli/master/icons/articles.png" />
-</a>
 <a href="https://www.instagram.com/santoshs.ig/">
   <img align="left" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" />
 </a>
 <a href="https://www.buymeacoffee.com/santoshmanaguli">
-  <img align="left" width="26px" src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" />
+  <img align="left" width="70px" src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" />
 </a>
 
 <br />
