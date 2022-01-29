@@ -31,7 +31,7 @@ Here are some ideas to get you started:
 - 🌱 I’m currently learning everything 🤣😁
 - 👯 Ready to collaborate
 - 📫 Empowering everyone to <b>contribute to Open Source</b>
-- 📖 Actively contributing to open source projects as a non-coder and as a coder also
+- 📖 Actively contributing to open source projects as a <b>non-coder and as a coder<b/>(sometime) also
 - ⚡ Fun fact: A professional player in first person shooter games
 <br />
 <br />
