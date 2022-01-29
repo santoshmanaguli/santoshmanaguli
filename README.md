@@ -28,6 +28,9 @@ Here are some ideas to get you started:
 
 <br />
 
+
+<p align="left"> <a href="https://twitter.com/santoshmanguli" target="blank"><img src="https://img.shields.io/twitter/follow/santoshmanguli?logo=twitter&style=for-the-badge" alt="santoshmanguli" /></a> </p>
+
 - 🌱 I’m currently learning everything 🤣😁
 - 👯 Ready to collaborate
 - 📫 Empowering everyone to <b>contribute to Open Source</b>
