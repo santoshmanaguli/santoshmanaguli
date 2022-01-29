@@ -24,6 +24,10 @@ Here are some ideas to get you started:
 <br />
 <br />
 
+[![trophy](https://github-profile-trophy.vercel.app/?username=santoshmanaguli)](https://github.com/ryo-ma/github-profile-trophy)
+
+<br />
+
 - 🌱 I’m currently learning everything 🤣😁
 - 👯 Ready to collaborate
 - 📫 Empowering everyone to <b>contribute to Open Source</b>
