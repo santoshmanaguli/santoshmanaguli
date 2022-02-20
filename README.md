@@ -1,5 +1,5 @@
 <h1>### Hi there, I'm Santosh Managuli 🙋‍♂️</h1>
-<h3>Sharing knowledge through code, posts, articles and empowering people to contribute to <u>Open Source</u> through code and non-code contribution.</h3>
+<h4>Sharing knowledge through code, posts and articles.</h4>
 
 <!--
 **santoshmanaguli/santoshmanaguli** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
