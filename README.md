@@ -1,5 +1,6 @@
 <h1>### Hi there, I'm Santosh Managuli 🙋‍♂️</h1>
-<h4>Sharing knowledge through code, posts and articles.</h4>
+<h4>Sharing knowledge through code, posts and articles.</h4><br>
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=santoshmanguli&label=Profile%20views&color=0e75b6&style=flat" alt="santoshmanguli" /> </p>
 
 <!--
 **santoshmanaguli/santoshmanaguli** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
