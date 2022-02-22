@@ -1,5 +1,5 @@
 <h1>### Hi there, I'm Santosh Managuli 🙋‍♂️</h1>
-<h4>Sharing knowledge through code, posts and articles.</h4><br>
+<h4>Sharing knowledge through code, posts and articles.</h4>
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=santoshmanguli&label=Profile%20views&color=0e75b6&style=flat" alt="santoshmanguli" /> </p>
 
 <!--
@@ -19,13 +19,7 @@ Here are some ideas to get you started:
 <a href="https://www.instagram.com/santoshs.ig/">
   <img align="left" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" />
 </a>
-
 <br />
-<br />
-<br />
-
-
-<p align="left"> <a href="https://twitter.com/santoshmanguli" target="blank"><img src="https://img.shields.io/twitter/follow/santoshmanguli?logo=twitter&style=for-the-badge" alt="santoshmanguli" /></a> </p>
 
 - 🌱 I’m currently learning everything 🤣😁
 - 👯 Ready to collaborate
