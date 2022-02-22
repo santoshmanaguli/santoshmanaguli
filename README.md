@@ -28,7 +28,6 @@ Here are some ideas to get you started:
 - 📖 Actively contributing to open source projects as a <b>non-coder and as a coder<b/>(sometime) also
 - ⚡ Fun fact: A professional player in first person shooter games
 <br />
-<br />
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api?username=santoshmanaguli&show_icons=true&locale=en" alt="santoshmanaguli" /></p>
 
