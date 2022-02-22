@@ -18,11 +18,11 @@
 <br />
 <br />
 
-- 🌱 I’m currently learning everything 🤣😁
-- 👯 Ready to collaborate
-- 📫 Empowering everyone to <b>contribute to Open Source</b>
-- 📖 Actively contributing to open source projects as a <b>non-coder and as a coder<b/>(sometime) also
-- ⚡ Fun fact: A professional player in first person shooter games
+- 🌱 I’m currently learning frontend technologies.
+- 👯 Ready to collaborate.
+- 📫 Empowering everyone to <b>contribute to Open Source</b>.
+- 📖 Actively contributing to open source projects.
+- ⚡ Fun fact: A professional player in first person shooter games.
   
 <h3 align="left">Support:</h3>
 <p><a href="https://www.buymeacoffee.com/santoshmanaguli"> <img align="center" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="https://www.buymeacoffee.com/santoshmanaguli" /></a></p>
