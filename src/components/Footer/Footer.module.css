@@ -1,0 +1,11 @@
+@import '../../vars.css';
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px ;
+  background-color: #19376D;
+  padding: 20px 20% 0 20%;
+  color: var(--color-text);
+}
