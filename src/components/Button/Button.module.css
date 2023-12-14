@@ -1,0 +1,14 @@
+@import "../../vars.css";
+
+.btn {
+  color: var(--color-text);
+  background-color: #576cbc;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 13px;
+  border-color: #576cbc;
+  text-decoration: none;
+  border-color: none;
+  cursor: pointer;
+}

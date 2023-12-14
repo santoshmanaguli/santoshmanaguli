@@ -9,3 +9,19 @@
   padding: 20px 20% 0 20%;
   color: var(--color-text);
 }
+
+.content{
+  letter-spacing: 1px;
+}
+
+.contactInfo{
+  display: flex;
+  flex-direction: column;
+}
+
+.contactInfo a{
+  text-decoration: none;
+  color: var(--color-text);
+  line-height: 25px;
+  letter-spacing: 1px;
+}
