@@ -1,0 +1,26 @@
+[
+  {
+    "role": "Software Engineer Level 2",
+    "organisation": "Trinesis Technology",
+    "startDate": "Feb, 2022",
+    "endDate": "Present",
+    "experiences": [
+      "Developed web applications in Vuejs and Reactjs ",
+      "Collaborated with cross-platform teams like NAIX, achieving 30% boost by enabling direct frontend data extraction.",
+      "Implemented feature like PDF highlighting, AI Assistant using Chat GPT, statistical infographics, google calendar like calendar etc..",
+      "Made use of State management tools like Vuex and Redux.",
+      "Provided full time support for production issue from QA team.",
+      "Integrated Stripe for payment gateway and used GPT API for AI Assistant Tool."
+    ]
+  },
+  {
+    "role": "Software Engineer Intern",
+    "organisation": "Fluctus India Pvt Ltd",
+    "startDate": "Sept 2021",
+    "endDate": "Feb 2022",
+    "experiences": [
+      "Developed Frontend UI using Reactjs and Bootstrap",
+      "Implemented reusable UI components and libraries to ensure consistency across projects."
+    ]
+  }
+]

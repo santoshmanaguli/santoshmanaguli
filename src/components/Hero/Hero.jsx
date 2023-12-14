@@ -3,7 +3,7 @@ import { Button } from "../Button/Button.jsx";
 
 export const Hero = () => {
   return (
-    <section className={styles.container}>
+    <section id="hero" className={styles.container}>
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Santosh Managuli</h1>
         <p className={styles.para}>

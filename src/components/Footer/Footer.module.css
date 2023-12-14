@@ -6,7 +6,7 @@
   justify-content: space-between;
   gap: 20px ;
   background-color: #19376D;
-  padding: 20px 20% 0 20%;
+  padding: 30px 20% 30px 20%;
   color: var(--color-text);
 }
 
@@ -22,6 +22,18 @@
 .contactInfo a{
   text-decoration: none;
   color: var(--color-text);
-  line-height: 25px;
+  line-height: 40px;
   letter-spacing: 1px;
+}
+
+
+.imgStyles{
+  width: 25px;
+  height: 25px;
+}
+
+.contactInfoDiv{
+  align-items: center;
+  display: flex;
+  gap: 10px;
 }
