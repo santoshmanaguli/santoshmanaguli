@@ -5,7 +5,7 @@ import github from '../../assets/github.png'
 
 export const Footer = () => {
   return (
-    <footer className={styles.container}>
+    <section className={styles.container} id="contact">
       <div>
         <h1 className={styles.content}>Contact</h1>
         <h3
@@ -47,6 +47,6 @@ export const Footer = () => {
           </a>
         </div>
       </div>
-    </footer>
+    </section>
   );
 };

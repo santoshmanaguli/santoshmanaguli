@@ -12,16 +12,16 @@ export const Navbar = () => {
         <div className={styles.menu}>
           <ul className={styles.menuItems}>
             <li>
-              <a href="/about">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a href="/experience">Experience</a>
+              <a href="#experience">Experience</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/experience">Projects</a>
-            </li>
+            </li> */}
             <li>
-              <a href="/experience">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </div>

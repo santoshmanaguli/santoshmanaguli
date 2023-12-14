@@ -14,6 +14,10 @@ export const Hero = () => {
           value={"Contact Me"}
           referenceValue={"mailto:santoshmanaguli1515@gmail.com"}
         />
+        <Button
+          value={"Resume"}
+          referenceValue={"https://docs.google.com/document/d/1THc7Fmxj7NFQYTPzXTCSUL1bcKmn5RYO/edit"}
+        />
       </div>
     </section>
   );
