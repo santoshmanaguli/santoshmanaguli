@@ -73,13 +73,39 @@ export const Contact = () => {
                 >
                   <h2>Get In Touch</h2>
                   <br />
-                  <div style={{textDecoration: "none"}}>
-                    <a href="mailto:santoshmanaguli98@gmail.com" >Gmail</a>
-                    <a href="https://github.com/santoshmanaguli">Github</a>
-                    <a href="https://linkedin.com/in/santoshmanaguli">
-                      Linkedin
+                  <div style={{}}>
+                    <a
+                      href="mailto:santoshmanaguli98@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      <h3>Gmail</h3>
                     </a>
-                    <a href="tel:9673493619">9673493619</a>
+                    <a
+                      href="https://github.com/santoshmanaguli"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      <h3>Github</h3>
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/santoshmanaguli"
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      <h3> Linkedin</h3>
+                    </a>
+                    <a
+                      href="tel:+919673493619"
+                      style={{ textDecoration: "none", color: "white" }}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <h3> +919673493619</h3>
+                    </a>
                   </div>
                 </div>
               )}
