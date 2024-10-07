@@ -1,5 +1,5 @@
 ## Portfolio
- - Link - https://santoshmanaguli.netlify.app
+ - Link - https://santoshmanaguli.vercel.app
  - Made using Reactjs
 
 NOTE :- Site under development...
