@@ -42,7 +42,7 @@ export function Navigation() {
             href="/"
             className="relative group"
           >
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent hover:from-primary/80 hover:via-primary hover:to-primary/80 transition-all duration-300">
+            <span className="text-2xl font-sf-pro-bold text-foreground hover:text-foreground/80 transition-all duration-200 tracking-tight">
               SM
             </span>
             <span className="absolute inset-0 rounded-md bg-primary/5 group-hover:bg-primary/10 transition-colors duration-300 -z-10 blur-sm" />
@@ -53,7 +53,7 @@ export function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="text-base font-medium text-foreground/70 hover:text-foreground transition-colors duration-200"
               >
                 {item.name}
               </Link>

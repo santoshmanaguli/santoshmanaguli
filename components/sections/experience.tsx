@@ -83,7 +83,7 @@ export function Experience() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-12 text-center">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sf-pro-bold mb-16 text-center tracking-tight">
             Work Experience
           </h2>
           <div className="space-y-8">

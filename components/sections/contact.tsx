@@ -57,10 +57,10 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sf-pro-bold mb-8 tracking-tight">
             Get In Touch
           </h2>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto font-light leading-relaxed">
             I&apos;m always open to discussing new opportunities, interesting
             projects, or just having a chat about technology. Feel free to reach
             out!

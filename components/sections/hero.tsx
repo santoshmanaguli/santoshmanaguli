@@ -47,28 +47,28 @@ export function Hero() {
           className="text-center"
         >
           <motion.div variants={itemVariants}>
-            <p className="text-sm md:text-base text-muted-foreground mb-4 font-medium">
+            <p className="text-base md:text-lg text-muted-foreground mb-6 font-medium tracking-tight">
               Hello, I&apos;m
             </p>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-sf-pro-bold mb-8 text-foreground tracking-tight leading-none"
           >
             Santosh Managuli
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-8"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-muted-foreground mb-12 tracking-tight"
           >
             Software Engineer
           </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed font-light"
           >
             Building modern, scalable web applications with a focus on user
             experience and performance. Passionate about clean code and

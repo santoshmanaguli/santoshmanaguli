@@ -20,10 +20,10 @@ export function About() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sf-pro-bold mb-12 text-center tracking-tight">
             About Me
           </h2>
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="space-y-8 text-xl sm:text-2xl text-muted-foreground leading-relaxed font-light">
             <p>
               I&apos;m a Software Engineer based in Pune, India, with a passion for
               creating exceptional digital experiences. I specialize in building
@@ -43,9 +43,9 @@ export function About() {
               frameworks, contributing to open-source projects, or sharing
               knowledge with the developer community.
             </p>
-            <div className="mt-8 p-6 rounded-lg border-2 border-primary/20 bg-primary/5">
-              <p className="text-base text-foreground leading-relaxed">
-                <span className="font-semibold text-primary">💻 Vibe Coder:</span> I&apos;m a vibe coder who embraces the power of AI tools to enhance my development workflow. I believe in using the best tools available—including AI assistants like Cursor—to write cleaner code, solve problems faster, and focus on what truly matters: building amazing experiences. AI doesn&apos;t replace creativity; it amplifies it.
+            <div className="mt-12 p-8 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm shadow-sm">
+              <p className="text-lg sm:text-xl text-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">💻 Vibe Coder:</span> I&apos;m a vibe coder who embraces the power of AI tools to enhance my development workflow. I believe in using the best tools available—including AI assistants like Cursor—to write cleaner code, solve problems faster, and focus on what truly matters: building amazing experiences. AI doesn&apos;t replace creativity; it amplifies it.
               </p>
             </div>
           </div>
