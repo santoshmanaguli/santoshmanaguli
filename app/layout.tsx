@@ -4,6 +4,11 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://santoshmanaguli.vercel.app"),
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/favicon.ico',
+    apple: '/icon.svg',
+  },
   title: {
     default: "Santosh Managuli | Software Engineer",
     template: "%s | Santosh Managuli",
