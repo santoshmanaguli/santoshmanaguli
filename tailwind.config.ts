@@ -18,6 +18,26 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          "Inter",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
+        mono: [
+          "SF Mono",
+          "JetBrains Mono",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Consolas",
+          "monospace",
+        ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

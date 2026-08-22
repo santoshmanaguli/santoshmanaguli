@@ -1,123 +1,76 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowDown, Download } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { motion } from "framer-motion"
+import { FileText, Github, Instagram, Linkedin, Mail, MapPin, Twitter } from "lucide-react"
+import { EMAIL, RESUME_URL, TAGLINE, socials } from "@/lib/data"
+
+const iconMap = { Github, Linkedin, Twitter, Instagram, Mail } as const
 
 export function Hero() {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  }
-
-  if (!mounted) return null
-
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
-      <div className="container mx-auto max-w-4xl">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="text-center"
-        >
-          <motion.div variants={itemVariants}>
-            <p className="text-base md:text-lg text-muted-foreground mb-6 font-medium tracking-tight">
-              Hello, I&apos;m
-            </p>
-          </motion.div>
-
-          <motion.h1
-            variants={itemVariants}
-            className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-sf-pro-bold mb-8 text-foreground tracking-tight leading-none"
+    <motion.section
+      id="top"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="flex items-center justify-between gap-4"
+    >
+      <div className="flex-1 space-y-1.5">
+        <h1 className="text-2xl font-bold">Santosh Managuli</h1>
+        <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+          {TAGLINE}
+        </p>
+        <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+          <Link
+            href="https://www.google.com/maps/place/Pune"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
           >
-            Santosh Managuli
-          </motion.h1>
+            <MapPin className="size-3" />
+            Pune, India
+          </Link>
+        </p>
 
-          <motion.h2
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-muted-foreground mb-12 tracking-tight"
-          >
-            Software Engineer
-          </motion.h2>
-
-          <motion.p
-            variants={itemVariants}
-            className="text-xl sm:text-2xl text-muted-foreground mb-16 max-w-3xl mx-auto leading-relaxed font-light"
-          >
-            Building modern, scalable web applications with a focus on user
-            experience and performance. Passionate about clean code and
-            innovative solutions.
-          </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Button
-              asChild
-              size="lg"
-              className="text-base px-8 py-6 h-auto"
-            >
+        <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+          {socials.map((social) => {
+            const Icon = iconMap[social.icon]
+            return (
               <Link
-                href="https://docs.google.com/document/d/1THc7Fmxj7NFQYTPzXTCSUL1bcKmn5RYO/edit"
-                target="_blank"
+                key={social.name}
+                href={social.url}
+                target={social.url.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noopener noreferrer"
+                aria-label={social.name}
+                className="inline-flex size-8 items-center justify-center rounded-md border border-input bg-background transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                <Download className="mr-2 h-5 w-5" />
-                View Resume
+                <Icon className="size-4" />
               </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="text-base px-8 py-6 h-auto"
-            >
-              <Link href="#contact">Get In Touch</Link>
-            </Button>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="mt-16"
+            )
+          })}
+          <Link
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-8 items-center justify-center gap-1.5 rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
           >
-            <Link
-              href="#about"
-              className="inline-flex flex-col items-center text-muted-foreground hover:text-primary transition-colors group"
-            >
-              <span className="text-sm mb-2">Scroll to explore</span>
-              <ArrowDown className="h-6 w-6 animate-bounce" />
-            </Link>
-          </motion.div>
-        </motion.div>
+            <FileText className="size-4" />
+            CV
+          </Link>
+        </div>
+
+        <p className="hidden font-mono text-sm text-muted-foreground print:block">
+          {EMAIL}
+        </p>
       </div>
-    </section>
+
+      {/* Monogram stands in for the reference's portrait. */}
+      <div className="flex size-24 shrink-0 items-center justify-center rounded-full border border-muted bg-secondary shadow-sm sm:size-28">
+        <span className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
+          SM
+        </span>
+      </div>
+    </motion.section>
   )
 }
-

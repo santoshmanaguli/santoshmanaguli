@@ -1,56 +1,33 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { GraduationCap } from "lucide-react"
+import { Section } from "@/components/ui/section"
+import { Card } from "@/components/ui/card"
 
 export function Education() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
-    <section
-      id="education"
-      ref={ref}
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/30"
-    >
-      <div className="container mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sf-pro-bold mb-16 text-center tracking-tight">
-            Education
-          </h2>
-          <Card className="border-2 hover:border-primary/50 transition-colors">
-            <CardHeader>
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <CardTitle className="text-2xl mb-2">
-                    Bachelor&apos;s Degree
-                  </CardTitle>
-                  <p className="text-muted-foreground">
-                    Pune University
-                  </p>
-                </div>
+    <Section id="education" title="Education">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.4 }}
+        className="mt-1 space-y-4"
+      >
+        <Card>
+          <div className="flex flex-col space-y-1.5">
+            <div className="flex items-center justify-between gap-x-2 text-base">
+              <h3 className="font-semibold leading-none">Pune University</h3>
+              <div className="text-sm tabular-nums text-muted-foreground">
+                2016 - 2020
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Graduated in 2020 with a focus on computer science and software
-                engineering fundamentals.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
-    </section>
+            </div>
+          </div>
+          <div className="mt-2 text-pretty font-mono text-sm text-muted-foreground">
+            Bachelor&apos;s Degree, Computer Science
+          </div>
+        </Card>
+      </motion.div>
+    </Section>
   )
 }
-

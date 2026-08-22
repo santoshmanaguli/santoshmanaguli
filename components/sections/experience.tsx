@@ -1,151 +1,113 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar, MapPin } from "lucide-react"
+import { ChevronDown } from "lucide-react"
+import { experiences, type Experience as ExperienceItem } from "@/lib/data"
+import { Section } from "@/components/ui/section"
+import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
-const experiences = [
-  {
-    company: "Trinesis",
-    role: "Software Engineer L2",
-    location: "Pune, India",
-    period: "Feb 2022 - Oct 2024",
-    description: [
-      "Promoted from Software Engineer to Software Engineer L2, demonstrating consistent performance and technical growth",
-      "Implemented complex UI and reusable components in the app for better optimization and handled state management using Vuex",
-      "Built a multi-functional task manager feature which would handle multiple users according to their roles",
-      "Built a data visualization dashboard using Highchartsvue",
-      "Built a feature wherein we integrated a Google calendar-like calendar component from Vuetify which would support multiple features",
-      "Developed the core MVP of the app's AI Assistant using prompt engineering with OpenAI API",
-      "Integrated Stripe for payment gateway and also redesigned the whole UI for the app's payment page with responsiveness",
-      "Maintained the responsive design of the app using CSS libraries like Bootstrap, Vuetify and also using media queries across all devices",
-      "Built various features for various roles according to application demand",
-      "Streamlined existing processes, resulting in increased efficiency and reduced operational costs",
-      "Performance optimization and lazy loading of components",
-      "Built responsive web apps and integrated backend API for smooth working of the application",
-      "Integration of social accounts to the web application like Login with Google/Facebook",
-    ],
-    technologies: [
-      "JavaScript",
-      "Vue.js",
-      "Vuex",
-      "Vuetify",
-      "vue-router",
-      "Vue CLI",
-      "Angular",
-      "RxJs",
-      "Angular Material",
-      "React.js",
-      "Redux",
-      "Chart.js",
-    ],
-  },
-  {
-    company: "Mobiloitte",
-    role: "Freelance Developer",
-    location: "Remote",
-    period: "2021 - 2022",
-    description: [
-      "Helped in developing webapp using Vue.js and Vuex for ushacook.com",
-      "Enhanced user experience and performance of the application",
-    ],
-    technologies: ["Vue.js", "Vuex", "JavaScript"],
-  },
-  {
-    company: "Indegene",
-    role: "UI Developer",
-    location: "Pune, India",
-    period: "2020 - 2021",
-    description: [
-      "Developed interactive, responsive user interfaces using React.js and JavaScript",
-      "Collaborated with backend teams to integrate REST APIs and optimize application performance",
-      "Ensured code quality and maintainability by following best practices in state management, component reusability, and UI optimization",
-    ],
-    technologies: ["React.js", "Redux", "Material-UI", "JavaScript"],
-  },
-]
-
-export function Experience() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+function ExperienceRow({ exp, index }: { exp: ExperienceItem; index: number }) {
+  const [expanded, setExpanded] = useState(index === 0)
+  const isLast = index === experiences.length - 1
 
   return (
-    <section
-      id="experience"
-      ref={ref}
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-muted/30"
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="relative"
     >
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sf-pro-bold mb-16 text-center tracking-tight">
-            Work Experience
-          </h2>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                }
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className="border-2 hover:border-primary/50 transition-colors">
-                  <CardHeader>
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                      <div>
-                        <CardTitle className="text-2xl mb-2">{exp.role}</CardTitle>
-                        <div className="flex items-center gap-4 text-muted-foreground">
-                          <div className="flex items-center gap-1">
-                            <MapPin className="h-4 w-4" />
-                            <span className="text-sm font-medium">{exp.company}</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            <span className="text-sm">{exp.period}</span>
-                          </div>
-                        </div>
-                        <div className="mt-2">
-                          <span className="text-sm text-muted-foreground">
-                            {exp.location}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {exp.description.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-primary mt-1.5">•</span>
-                          <span className="text-muted-foreground">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-2">
-                      {exp.technologies.map((tech, techIdx) => (
-                        <span
-                          key={techIdx}
-                          className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+      {!isLast && (
+        <div aria-hidden className="absolute bottom-0 left-5 top-10 w-px bg-muted" />
+      )}
+
+      <div className="group flex gap-4">
+        <div className="relative z-10 flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-muted bg-background shadow-md">
+          <span className="font-mono text-xs font-bold">{exp.initials}</span>
+        </div>
+
+        <div className="flex-1 pb-2">
+          <div className="rounded-lg border border-muted bg-card p-4 shadow-sm transition-all duration-300 hover:shadow group-hover:border-muted/80">
+            <div className="mb-1 flex flex-col justify-between gap-2 md:flex-row md:items-center">
+              <h3 className="text-base font-semibold">{exp.company}</h3>
+              <div className="text-sm tabular-nums text-muted-foreground">
+                {exp.period}
+              </div>
+            </div>
+
+            <div className="mb-2 flex flex-wrap items-center gap-1">
+              <span className="font-mono text-sm font-medium">{exp.role}</span>
+              <div className="flex-1" />
+              <Badge variant="outline">{exp.workMode}</Badge>
+            </div>
+
+            <p className="mt-2 text-sm text-muted-foreground">{exp.summary}</p>
+
+            <div
+              className={cn(
+                "grid transition-all duration-300",
+                expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+              )}
+            >
+              <div className="overflow-hidden">
+                <ul className="mt-3 space-y-1.5">
+                  {exp.highlights.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-2 text-sm text-muted-foreground"
+                    >
+                      <span className="mt-[7px] size-1 shrink-0 rounded-full bg-muted-foreground/60" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-3 flex flex-wrap items-center gap-1">
+              {exp.technologies.map((tech) => (
+                <Badge
+                  key={tech}
+                  variant="secondary"
+                  className="px-1 py-0 text-[10px]"
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setExpanded((prev) => !prev)}
+              aria-expanded={expanded}
+              className="mt-3 inline-flex items-center gap-1 font-mono text-xs text-muted-foreground transition-colors hover:text-foreground print:hidden"
+            >
+              {expanded ? "Show less" : `Show ${exp.highlights.length} highlights`}
+              <ChevronDown
+                className={cn(
+                  "size-3 transition-transform duration-300",
+                  expanded && "rotate-180"
+                )}
+              />
+            </button>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </motion.div>
   )
 }
 
+export function Experience() {
+  return (
+    <Section id="work" title="Work Experience">
+      <div className="mt-3">
+        {experiences.map((exp, index) => (
+          <ExperienceRow key={exp.company} exp={exp} index={index} />
+        ))}
+      </div>
+    </Section>
+  )
+}

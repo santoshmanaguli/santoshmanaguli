@@ -1,106 +1,75 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
+import { useMemo, useState } from "react"
+import { Layers } from "lucide-react"
+import { skillGroups } from "@/lib/data"
+import { Section } from "@/components/ui/section"
+import { Badge } from "@/components/ui/badge"
+import { cn } from "@/lib/utils"
 
-const skillCategories = [
-  {
-    category: "Frontend",
-    skills: [
-      "JavaScript",
-      "TypeScript",
-      "Vue.js",
-      "React.js",
-      "Angular",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Vuetify",
-      "Material-UI",
-    ],
-  },
-  {
-    category: "State Management",
-    skills: ["Vuex", "Redux", "RxJs"],
-  },
-  {
-    category: "Backend & Tools",
-    skills: ["Node.js", "REST APIs", "Git", "Vue CLI"],
-  },
-  {
-    category: "Libraries & Frameworks",
-    skills: [
-      "Chart.js",
-      "Highchartsvue",
-      "vue-router",
-      "Angular Material",
-    ],
-  },
-]
+const ALL = "All Skills"
 
 export function Skills() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [active, setActive] = useState(ALL)
+
+  const filters = useMemo(
+    () => [
+      { label: ALL, count: skillGroups.reduce((n, g) => n + g.skills.length, 0) },
+      ...skillGroups.map((g) => ({ label: g.category, count: g.skills.length })),
+    ],
+    []
+  )
+
+  const visible = useMemo(
+    () =>
+      active === ALL
+        ? skillGroups.flatMap((g) => g.skills)
+        : (skillGroups.find((g) => g.category === active)?.skills ?? []),
+    [active]
+  )
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-sf-pro-bold mb-16 text-center tracking-tight">
-            Technical Skills
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={category.category}
-                initial={{ opacity: 0, y: 20 }}
-                animate={
-                  isInView
-                    ? { opacity: 1, y: 0 }
-                    : { opacity: 0, y: 20 }
-                }
-                transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-                className="p-6 rounded-lg border bg-card"
+    <Section id="skills" title="Skills">
+      <div className="mt-2 space-y-4">
+        <div className="flex flex-wrap justify-start gap-2 print:hidden">
+          {filters.map((filter) => (
+            <button
+              key={filter.label}
+              type="button"
+              onClick={() => setActive(filter.label)}
+              className={cn(
+                "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300",
+                active === filter.label
+                  ? "bg-primary text-primary-foreground shadow-md"
+                  : "bg-muted hover:bg-muted/80"
+              )}
+            >
+              <span className="flex items-center gap-1">
+                {filter.label === ALL && <Layers className="size-3.5" />}
+                {filter.label}
+              </span>
+              <span
+                className={cn(
+                  "inline-flex size-4 items-center justify-center rounded-full text-[10px]",
+                  active === filter.label
+                    ? "bg-primary-foreground text-primary"
+                    : "bg-background/70"
+                )}
               >
-                <h3 className="text-xl font-semibold mb-4 text-primary">
-                  {category.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.span
-                      key={skill}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={
-                        isInView
-                          ? { opacity: 1, scale: 1 }
-                          : { opacity: 0, scale: 0.8 }
-                      }
-                      transition={{
-                        duration: 0.3,
-                        delay: categoryIndex * 0.1 + skillIndex * 0.05,
-                      }}
-                      className="px-4 py-2 text-sm font-medium rounded-md bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-colors"
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                {filter.count}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-1">
+          {visible.map((skill) => (
+            <Badge key={skill} variant="secondary" className="text-xs font-medium">
+              {skill}
+            </Badge>
+          ))}
+        </div>
       </div>
-    </section>
+    </Section>
   )
 }
-

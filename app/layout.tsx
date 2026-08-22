@@ -61,10 +61,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sf-pro" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
